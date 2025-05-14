@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIANO</title>
+    <style>
+        .barra {
+            background-color: #ffffff;
+            height: 76px;
+            width: 85%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            /*border-radius: 20px;*/
+        }
+
+
+        .buton-conosco {
+            background-color: #000000;
+            /* Cor de fundo */
+            color: white;
+            /* Cor do texto */
+            padding: 10px 20px;
+            /* Espaçamento interno */
+            border: none;
+            /* Sem borda */
+            border-radius: 8px;
+            /* Cantos arredondados */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            cursor: pointer;
+            /* Muda o cursor ao passar o mouse */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            /* Sombra leve */
+            transition: background-color 0.3s ease;
+            position: relative;
+
+
+
+        }
+
+        .buton-conosco:hover {
+            background-color: #ff0000;
+            /* Cor ao passar o mouse, o tal do hover*/
+        }
+
+        .contato {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 19px 20px;
+            background: rgb(255, 255, 255);
+            color: white;
+            font-weight: bold;
+
+        }
+
+        .Caixa {
+            position: fixed;
+            width: 30px;
+            top: 1%;
+            right: 100;
+            padding: 19px 20px;
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            display: block;
+
+        }
+
+        .buton-menu {
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+            background-color: rgb(255, 255, 255);
+            color: black;
+            left: 0%;
+            width: 45px;
+            height: 30px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .buton-menu:hover {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+        }
+
+
+        .legenda {
+            position: fixed;
+            top: -0.5%;
+            left: 3.4%;
+            padding: 19px 20px;
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .Menu {
+            height: 100vh;
+            width: 30%;
+            display: none;
+            /* Esconde o menu por padrão */
+            background-color: rgb(218, 198, 181);
+            padding: 10px;
+            margin-top: 11.3px;
+            border: 1px solid #000000;
+            position: absolute;
+            z-index: 10;
+            box-shadow: 2px 2px 10px rgb(255, 225, 28);
+
+
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            /* sombra preta semi-transparente */
+            z-index: 5;
+            display: none;
+            /* começa escondido */
+        }
+
+        .menu.ativo {
+            max-height: 100px;
+            /* ou "fit-content" se souber a altura */
+        }
+
+
+
+        .topicos {
+            font-size: 70px;
+            left: -4%;
+            font-family: 'Times New Roman', Times, serif;
+            color: beige;
+
+        }
+
+
+
+        body {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            margin: 0;
+            padding-top: 60px;
+
+
+        }
+
+        .logo-img {
+            padding: 5px 5px;
+            width: 300px;
+            top: -7%;
+            left: 40%;
+            position: absolute;
+            z-index: 2;
+        }
+
+
+        .buton-nos {
+            background-color: #ffffff;
+            /* Cor de fundo */
+            color: rgb(0, 0, 0);
+            /* Cor do texto */
+            padding: 10px 20px;
+            /* Espaçamento interno */
+            border: none;
+            /* Sem borda */
+            border-radius: 8px;
+            /* Cantos arredondados */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            cursor: pointer;
+            /* Muda o cursor ao passar o mouse */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            /* Sombra leve */
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        .buton-nos:hover {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+        }
+
+        .linha-destaque {
+            border: none;
+            /* Remove a borda padrão */
+            height: 1px;
+            /* Define a espessura */
+            background-color: #000000;
+            /* Cor de destaque */
+            margin: 20px 0;
+            /* Espaçamento acima e abaixo */
+            width: 100%;
+            /* Ocupa toda a largura */
+            z-index: 10;
+            position: absolute;
+            top: 52px;
+
+        }
+
+        .texto {
+            color: black;
+            font-size: 16px;
+            border-radius: 5%;
+            font-family: 'Times New Roman', Times, serif;
+            /*text-align: left; */
+            left: 0%;
+            top: 40%;
+            z-index: 10;
+            position: relative;
+
+        }
+
+        .foto-modelo{
+            padding: 5px 5px;
+            width: 200vh;
+            height: 90vh;
+            top: 9%;
+            left:0%;
+            position: absolute;
+            z-index: 2;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="barra"> </div>
+    <div class="contato">
+        <button class="buton-conosco" onclick="Nada()"> Fale Conosco </button> || <button class="buton-nos"
+            onclick="Nada()"> Fale Conosco </button>
+    </div>
+    <div class="Caixa">
+        <button class="buton-menu" onclick="funcao()"> ≡ </button>
+        <p class="legenda">Menu</p>
+    </div>
+    <div id="Menu" class="Menu">
+        <ul>
+            <li style="color: rgb(218, 198, 181) ;"><a href="#" class="topicos">Masculinos</a></li>
+            <li style="color: rgb(218, 198, 181)"><a href="#" class="topicos">Feminino</a></li>
+            <li style="color: rgb(218, 198, 181) "><a href="#" class="topicos">Conjuntos</a></li>
+        </ul>
+    </div>
+    <div>
+        <div class="overlay" id="fundo-escuro"></div>
+    </div>
+    <br>
+    <div class="logo">
+        <img src="C:\Users\luizm\Downloads\LOGO-MARCA.svg" alt="LOGO MARCA" class="logo-img">
+    </div>
+    <hr class="linha-destaque">
+    <br>
+    <br>
+    <div class="CAPA">
+        <img src="C:\Users\luizm\Downloads\SEMPRE FAZENDO PARTE DE VOCÊ.png" alt="MODELO" class="foto-modelo">
+    </div>
+    <div class="texto"> </div>
+
+
+
+    <script>
+
+
+        const funcao = () => {
+            const menu = document.getElementById("Menu");
+            const sombra = document.getElementById("fundo-escuro");
+            if (menu.style.display === "block" && sombra.style.display === "block") {
+                menu.style.display = "none";
+                sombra.style.display = "none";
+            } else {
+                menu.style.display = "block";
+                sombra.style.display = "block";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
